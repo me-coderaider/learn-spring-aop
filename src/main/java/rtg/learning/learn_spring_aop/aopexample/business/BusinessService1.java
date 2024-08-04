@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
+import rtg.learning.learn_spring_aop.aopexample.annotations.TrackTime;
 import rtg.learning.learn_spring_aop.aopexample.data.DataService1;
 
 @Service
@@ -19,6 +20,7 @@ public class BusinessService1 {
 		this.dataService1 = dataService1;
 	}
 	
+	@TrackTime
 	public int calculateMax() {
 		int[] data=dataService1.retrieveData();
 //		throw new RuntimeException("Something went wrong!!");

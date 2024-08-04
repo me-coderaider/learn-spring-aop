@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
+import rtg.learning.learn_spring_aop.aopexample.annotations.TrackTime;
+
 @Configuration
 @Aspect
 public class PerformanceTrackingAspect {
@@ -14,6 +16,7 @@ public class PerformanceTrackingAspect {
 	private Logger logger=LoggerFactory.getLogger(getClass());
 	
 	@Around("rtg.learning.learn_spring_aop.aopexample.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
+//	@TrackTime
 	public Object findExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 		// 1.Start the timer
 		long startTimeMillis = System.currentTimeMillis();
